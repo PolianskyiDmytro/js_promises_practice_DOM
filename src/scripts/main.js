@@ -1,5 +1,6 @@
 'use strict';
 
+const body = document.querySelector('body');
 const firstResult = document.createElement('div');
 const secondResult = document.createElement('div');
 const thirdResult = document.createElement('div');
@@ -7,8 +8,6 @@ const thirdResult = document.createElement('div');
 firstResult.dataset.qa = 'notification';
 secondResult.dataset.qa = 'notification';
 thirdResult.dataset.qa = 'notification';
-
-const body = document.querySelector('body');
 
 const firstPromise = new Promise((resolve, reject) => {
   body.addEventListener('click', () => {
