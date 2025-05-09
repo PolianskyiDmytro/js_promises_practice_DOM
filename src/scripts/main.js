@@ -12,6 +12,10 @@ thirdResult.dataset.qa = 'notification';
 const firstPromise = new Promise((resolve, reject) => {
   body.addEventListener('click', () => {
     resolve('First promise was resolved');
+
+    body.removeEventListener('contextmenu', () => {
+      resolve('First promise was resolved');
+    });
   });
 
   setTimeout(() => {
@@ -27,6 +31,10 @@ const secondPromise = new Promise((resolve) => {
   body.addEventListener('contextmenu', (e) => {
     e.preventDefault();
     resolve('Second promise was resolved');
+
+    body.removeEventListener('click', () => {
+      resolve('Second promise was resolved');
+    });
   });
 });
 
@@ -39,6 +47,14 @@ const thirdPromise = new Promise((resolve) => {
 
     if (clickRight && clickLeft) {
       resolve('Third promise was resolved');
+
+      body.removeEventListener('click', () => {
+        resolve('Third promise was resolved');
+      });
+
+      body.removeEventListener('contextmenu', () => {
+        resolve('Third promise was resolved');
+      });
     }
   });
 
@@ -48,6 +64,14 @@ const thirdPromise = new Promise((resolve) => {
 
     if (clickRight && clickLeft) {
       resolve('Third promise was resolved');
+
+      body.removeEventListener('click', () => {
+        resolve('Third promise was resolved');
+      });
+
+      body.removeEventListener('contextmenu', () => {
+        resolve('Third promise was resolved');
+      });
     }
   });
 });
