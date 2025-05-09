@@ -63,17 +63,17 @@ firstPromise
     firstResult.innerHTML = errorMessage.message;
   })
   .finally(() => {
-    body.appendChild(firstResult.cloneNode(true));
+    body.appendChild(firstResult);
   });
 
 secondPromise.then((result) => {
   secondResult.className = 'success';
   secondResult.innerHTML = result;
-  body.appendChild(secondResult.cloneNode(true));
+  body.appendChild(secondResult);
 });
 
 thirdPromise.then((result) => {
   thirdResult.className = 'success';
   thirdResult.innerHTML = result;
-  body.appendChild(thirdResult.cloneNode(true));
+  body.appendChild(thirdResult);
 });
